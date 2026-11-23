@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111827" />
+    <title>言衡 · CET-SET6 口语模拟</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <button class="brand" data-action="home" aria-label="返回首页">
+        <span class="brand-mark">YH</span>
+        <span><strong>言衡</strong><small>CET-SET6 SPEAKING LAB</small></span>
+      </button>
+      <div class="status-pill" id="apiStatus"><i></i><span>正在检查 API</span></div>
+    </header>
+
+    <main id="app" aria-live="polite"></main>
+
+    <template id="homeTemplate">
+      <section class="hero">
+        <div class="eyebrow"><span>AI EXAMINER</span><span>15-POINT RUBRIC</span></div>
+        <h1>把每一次开口，<br /><em>练成有分量的表达。</em></h1>
+        <p>按 CET-SET6 三部分流程模拟。API 动态出题，麦克风采集真实作答，AI 从语音、语言与互动表现给出严格诊断。</p>
+        <div class="hero-actions">
+          <button class="button primary" data-mode="full">开始完整模拟 <span>约 18 分钟 →</span></button>
+          <button class="button ghost" data-action="mic-select">选择麦克风</button>
+          <button class="button ghost" data-action="mic-test">测试麦克风</button>
+        </div>
+        <div class="selected-mic"><span>当前录音设备</span><b id="selectedMicLabel">正在检查…</b></div>
+      </section>
+
+      <section class="section-heading">
+        <div><span class="index">01</span><h2>分项训练</h2></div>
+        <p>针对薄弱环节反复练习，每次均由 API 生成新题。</p>
+      </section>
+      <section class="module-grid">
+        <article class="module-card coral">
+          <div class="module-top"><span>PART 01</span><span>约 2 MIN</span></div>
+          <div class="module-icon">01</div>
+          <h3>自我介绍与问答</h3>
+          <p>建立清晰的个人表达，并应对考官的即时追问。</p>
+          <div class="tags"><span>准确性</span><span>即时反应</span></div>
+          <button class="card-action" data-mode="part1">单项开始 <span>↗</span></button>
+        </article>
+        <article class="module-card blue">
+          <div class="module-top"><span>PART 02</span><span>约 10 MIN</span></div>
+          <div class="module-icon">02</div>
+          <h3>个人陈述与讨论</h3>
+          <p>准备后完成观点陈述，并与 AI 考生进行多轮讨论。</p>
+          <div class="tags"><span>连贯性</span><span>互动能力</span></div>
+          <button class="card-action" data-mode="part2">单项开始 <span>↗</span></button>
+        </article>
+        <article class="module-card lime">
+          <div class="module-top"><span>PART 03</span><span>约 6 MIN</span></div>
+          <div class="module-icon">03</div>
+          <h3>深度问答</h3>
+          <p>围绕主题做进一步分析、论证、比较与评价。</p>
+          <div class="tags"><span>灵活性</span><span>观点深度</span></div>
+          <button class="card-action" data-mode="part3">单项开始 <span>↗</span></button>
+        </article>
+      </section>
+
+      <section class="rubric-band">
+        <div><span class="index">02</span><h2>评分依据</h2></div>
+        <div class="rubric-items">
+          <div><b>5</b><span>准确性<br />与语言范围</span></div>
+          <div><b>5</b><span>话语长短<br />与连贯性</span></div>
+          <div><b>5</b><span>灵活性<br />与适切性</span></div>
+          <div class="total"><b>15</b><span>总分</span></div>
+        </div>
+      </section>
+      <p class="disclaimer">AI 结果用于训练诊断，不是全国大学英语四、六级考试委员会签发的官方成绩。</p>
+    </template>
+
+    <div id="toast" role="status"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
